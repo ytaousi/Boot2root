@@ -1,27 +1,23 @@
-import turtle 
+import turtle
+import time
 
 
 def gogoTurtle(contents):
-    lineNumber = 1
     for i in contents:
         if "Avance" in i:
-            pen.forward()
+            steps = [int(word) for word in i.split() if word.isdigit()]
+            pen.forward(int(steps[0]))
         if "Recule" in i:
-            print("found" + str(lineNumber))
+            steps = [int(word) for word in i.split() if word.isdigit()]
+            pen.back(int(steps[0]))
         if "Tourne droite" in i:
-            print("found" + str(lineNumber))
+            angle = [int(word) for word in i.split() if word.isdigit()]
+            pen.right(int(angle[0]))
         if "Tourne gauche" in i:
-            print("found" + str(lineNumber))
-        lineNumber += 1
-        # if i == "Avance":
-        #     pen.forward()
-        # if i == "Recule":
-        #     pen.backward()
-        # if i == "Tourne droite":
-        #     pen.right()
-        # if i == "Tourne gauche":
-        #     pen.left()
-with open("turtle.txt") as f:
+            angle = [int(word) for word in i.split() if word.isdigit()]
+            pen.left(int(angle[0]))
+
+with open("letter.txt") as f:
     contents = f.readlines()
 
 # Forming the window screen
@@ -32,14 +28,11 @@ tut.title("Turtle")
 pen = turtle.Turtle()
 pen.color("orange")
 
+
 gogoTurtle(contents)
+time.sleep(300)
 # tut = turtle.Screen()		 
 
-# # for different shapes
-# side = 300
-# for i in range(10):
-# 	form_tri(side)
-# 	side -= 30
 
 # Avance : 733
 

