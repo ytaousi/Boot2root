@@ -12,3 +12,4 @@ less -r /dev/shm/linpeas.txt
 
 info proc map
 strings -a -t x /usr/lib/i386-linux-gnu/libc.so.6 | grep "/bin/sh"
+"https://www.ired.team/offensive-security/code-injection-process-injection/binary-exploitation/return-to-libc-ret2libc"
