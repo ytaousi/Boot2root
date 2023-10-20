@@ -1,6 +1,6 @@
 
 /* WARNING: Type propagation algorithm not settling */
-// 4 2 6 3 1 5
+// 4 2 6 1 3 5
 void phase_6(undefined4 param_1)
 
 {
